@@ -11,6 +11,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+/**
+ * Clase que representa un objeto de persistencia de la tabla departaments de la base de datos 
+ */
 @Entity
 @Table(name = "departaments")
 public class Departament {

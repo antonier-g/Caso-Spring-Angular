@@ -9,6 +9,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+
+/**
+ * Clase que representa un objeto de persistencia de la tabla enterprises de la base de datos 
+ */
 @Entity
 @Table(name = "enterprises")
 public class Enterprise {

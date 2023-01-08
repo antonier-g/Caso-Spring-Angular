@@ -19,6 +19,9 @@ import com.aer.empleado.excepciones.ResourceNotFoundException;
 import com.aer.empleado.model.Departament;
 import com.aer.empleado.service.DepartamentService;
 
+/**
+ * Clase para exponer los servicios de departament y los puedan consumir desde el front
+ */
 @RestController
 @RequestMapping("/departament/")
 public class DepartamentREST {

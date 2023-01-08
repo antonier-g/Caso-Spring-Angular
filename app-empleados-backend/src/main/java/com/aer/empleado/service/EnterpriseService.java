@@ -15,6 +15,9 @@ import org.springframework.stereotype.Service;
 import com.aer.empleado.model.Enterprise;
 import com.aer.empleado.repository.EnterpriseRepository;
 
+/**
+ * Clase para modifcar los metodos del repository enterprise a nuestra conveniencia
+ */
 @Service
 public class EnterpriseService implements EnterpriseRepository {
 	
@@ -114,7 +117,8 @@ public class EnterpriseService implements EnterpriseRepository {
 	@Override
 	public Optional<Enterprise> findById(Long id) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		//return Optional.empty();
+		return enterpriseRepository.findById(id);
 	}
 
 	@Override

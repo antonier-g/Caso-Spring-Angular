@@ -15,6 +15,9 @@ import org.springframework.stereotype.Service;
 import com.aer.empleado.model.Departament;
 import com.aer.empleado.repository.DepartamentRepository;
 
+/**
+ * Clase para modifcar los metodos del repository departament a nuestra conveniencia
+ */
 @Service
 public class DepartamentService implements DepartamentRepository {
 	

@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.aer.empleado.model.DepartamentEmployee;
 import com.aer.empleado.service.DepartamentEmployeeService;
 
+
+/**
+ * Clase para exponer los servicios de departaments_employees y los puedan consumir desde el front
+ */
 @RestController
 @RequestMapping("/depemp/")
 public class DepartamentEmployeeREST {

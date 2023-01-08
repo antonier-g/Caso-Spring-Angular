@@ -15,6 +15,9 @@ import org.springframework.stereotype.Service;
 import com.aer.empleado.model.Employee;
 import com.aer.empleado.repository.EmployeeRepository;
 
+/**
+ * Clase para modifcar los metodos del repository employee a nuestra conveniencia
+ */
 @Service
 public class EmployeeService implements EmployeeRepository {
 	
@@ -114,7 +117,8 @@ public class EmployeeService implements EmployeeRepository {
 	@Override
 	public Optional<Employee> findById(Long id) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		//return Optional.empty();
+		return employeeRepository.findById(id);
 	}
 
 	@Override

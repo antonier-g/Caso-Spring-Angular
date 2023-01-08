@@ -16,6 +16,10 @@ import org.springframework.stereotype.Service;
 import com.aer.empleado.model.DepartamentEmployee;
 import com.aer.empleado.repository.DepartamentEmployeeRepository;
 
+
+/**
+ * Clase para modifcar los metodos del repository departament_employee a nuestra conveniencia
+ */
 @Service
 public class DepartamentEmployeeService implements DepartamentEmployeeRepository {
 
