@@ -1,0 +1,45 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Actualizar Empresa</h3>
+    <form (ngSubmit)="onSubmit()" #enterpriseForm="ngForm">
+        <div class="form-group">
+            <label>Nombre:</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="enterprise.name" name="name" required
+                minlength="4" maxlength="60" placeholder="Ingrese el nombre" #name="ngModel">
+            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="name.errors.required">Ingrese el nombre</div>
+                <div *ngIf="name.errors.minlength">El nombre debe contener min 4 caracteres</div>
+                <div *ngIf="name.errors.maxlength">El nombre debe contener max 60 caracteres</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Direccion:</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="enterprise.address"
+                name="address" required maxlength="60" placeholder="Ingrese la direccion" #address="ngModel">
+            <div class="alert alert-danger" *ngIf="address.invalid && (address.dirty || address.touched)">
+                <div *ngIf="address.errors.required">Ingrese la direccion</div>
+                <div *ngIf="address.errors.maxlength">La direccion debe contener max 60 caracteres</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Telefono:</label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="enterprise.phone" name="phone"
+                maxlength="15" placeholder="Ingrese el telefono" #phone="ngModel">
+            <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                <div *ngIf="phone.errors.maxlength">El telefono debe contener max 15 caracteres</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Estado:</label>
+            <input type="text" class="form-control" id="status" [(ngModel)]="enterprise.status" name="status" required
+                maxlength="1" placeholder="Ingrese el estado: Activo (A) o Inactivo (I) " #status="ngModel">
+            <div class="alert alert-danger" *ngIf="status.invalid && (status.dirty || status.touched)">
+                <div *ngIf="status.errors.required">Digite el estado</div>
+                <div *ngIf="status.errors.maxlength">El estado debe contener max 1 caracter</div>
+            </div>
+        </div>
+        
+        <button class="btn btn-success" [disabled]="!enterpriseForm.form.valid">Guardar</button>
+
+    </form>
+</div>
+

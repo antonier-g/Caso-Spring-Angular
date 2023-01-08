@@ -16,5 +16,21 @@ export class EnterpriseService {
     return this.httpClient.get<Enterprise[]>(`${this.baseURL}`);
   }
 
+  //registar empresa
+  public registarEnterprise(enterprise: Enterprise): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}`,enterprise);
+  }
+
+  //actualizar empresa
+  public actualizarEnterprise(id: number, enterprise:Enterprise): Observable<Object> {
+    //return this.httpClient.put(`${this.baseURL}/${id}`,enterprise);
+    return this.httpClient.put(`${this.baseURL}${id}`,enterprise);
+  }
+
+  //este metodo sirve para obtener o buscar una empresa
+  public obtenerEnterprisePorId(id:number):Observable<Enterprise>{
+    //return this.httpClient.get<Enterprise>(`${this.baseURL}/${id}`);
+    return this.httpClient.get<Enterprise>(`${this.baseURL}${id}`);
+  }
 }
 

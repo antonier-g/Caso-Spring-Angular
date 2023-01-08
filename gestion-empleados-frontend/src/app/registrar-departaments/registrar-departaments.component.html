@@ -14,7 +14,7 @@
         <div class="form-group">
             <label>Descripcion:</label>
             <input type="text" class="form-control" id="description" [(ngModel)]="departament.description"
-                name="description" maxlength="60" placeholder="Ingrese el nombre" #description="ngModel">
+                name="description" maxlength="60" placeholder="Ingrese la descripcion" #description="ngModel">
             <div class="alert alert-danger" *ngIf="description.invalid && (description.dirty || description.touched)">
                 <div *ngIf="description.errors.maxlength">La descripcion debe contener max 60 caracteres</div>
             </div>
@@ -38,9 +38,12 @@
         </div>
         <div class="form-group">
             <label>Empresa:</label>
-            <select name="enterprise" id="enterprise" [(ngModel)]="departament.enterprise" class="form-control" required>
+            <select name="enterprise" id="enterprise" [(ngModel)]="departament.enterprise" class="form-control" required #enterprise="ngModel">
                 <option [ngValue]="item" *ngFor="let item of enterprises">{{item.name}}</option>
             </select>
+            <div class="alert alert-danger" *ngIf="enterprise.invalid && (enterprise.dirty || enterprise.touched)">
+                <div *ngIf="enterprise.errors.required">Ingrese la posicion</div>
+            </div>
         </div>
         <button class="btn btn-success" [disabled]="!departamentForm.form.valid">Guardar</button>
 

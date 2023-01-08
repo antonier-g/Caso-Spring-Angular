@@ -1,0 +1,24 @@
+<h2>Lista Empresas</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Estado</th>
+             <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let enterprise of enterprises">
+            <td>{{enterprise.name}}</td>
+            <td>{{enterprise.address}}</td>
+            <td>{{enterprise.phone}}</td>
+            <td>{{enterprise.status}}</td>
+            <td>
+                <button (click)="actualizarEnterprise(enterprise.id)" class="btn btn-info">Editar</button>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>

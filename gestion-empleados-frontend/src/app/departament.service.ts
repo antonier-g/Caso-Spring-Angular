@@ -28,7 +28,7 @@ export class DepartamentService {
     return this.httpClient.put(`${this.baseURL}${id}`,departament);
   }
 
-  //este metodo sirve para obtener o buscar un empleado
+  //este metodo sirve para obtener o buscar un departamento
   public obtenerDepartamentoPorId(id:number):Observable<Departament>{
     //return this.httpClient.get<Departament>(`${this.baseURL}/${id}`);
     return this.httpClient.get<Departament>(`${this.baseURL}${id}`);
