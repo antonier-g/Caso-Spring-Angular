@@ -1,5 +1,5 @@
 
-
+import  swal  from 'sweetalert2';
 import { DepartamentService } from './../departament.service';
 import { Departament } from './../departament';
 import { Component, OnInit } from '@angular/core';
@@ -27,7 +27,7 @@ export class ActualizarDepartamentsComponent implements OnInit {
 
   navegarListaDeEmpleados() {
     this.router.navigate(['/departaments']);
-    //swal('Empleado actualizado',`El empleado ${this.empleado.nombre} ha sido actualizado con exito`,`success`);
+    swal('Departamento actualizado',`El departamento ${this.departament.name} ha sido actualizado con exito`,`success`);
   }
 
   onSubmit() {

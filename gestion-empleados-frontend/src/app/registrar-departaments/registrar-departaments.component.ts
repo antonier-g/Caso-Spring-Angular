@@ -4,6 +4,7 @@ import { Departament } from '../departament';
 import { DepartamentService } from '../departament.service';
 import { Enterprise } from '../enterprise';
 import { EnterpriseService } from '../enterprise.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registrar-departaments',
@@ -42,6 +43,7 @@ export class RegistrarDepartamentsComponent implements OnInit {
 
   private navegarListaDepartamentos() {
     this.router.navigate(['/departaments']);
+    swal('Departamento registrado',`El departamento ${this.departament.name} ha sido registrado con exito`,`success`);
   }
 
 

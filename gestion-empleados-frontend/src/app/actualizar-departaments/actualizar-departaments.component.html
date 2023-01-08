@@ -1,29 +1,49 @@
 <div class="col-md-6 offset-md-3">
-    <h3 class="text-center">Edicion Departamento</h3>
+    <h3 class="text-center">Actualizar Departamento</h3>
     <form (ngSubmit)="onSubmit()" #departamentForm="ngForm">
         <div class="form-group">
-            <label>Nombre: </label>
-            <input type="text" class="form-control" id="name" [(ngModel)]="departament.name" name="name">            
+            <label>Nombre:</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="departament.name" name="name" required
+                minlength="4" maxlength="60" placeholder="Ingrese el nombre" #name="ngModel">
+            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="name.errors.required">Ingrese el nombre</div>
+                <div *ngIf="name.errors.minlength">El nombre debe contener min 4 caracteres</div>
+                <div *ngIf="name.errors.maxlength">El nombre debe contener max 60 caracteres</div>
+            </div>
         </div>
         <div class="form-group">
-            <label>Descripcion: </label>
-            <input type="text" class="form-control" id="description" [(ngModel)]="departament.description" name="description">            
+            <label>Descripcion:</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="departament.description"
+                name="description" maxlength="60" placeholder="Ingrese el nombre" #description="ngModel">
+            <div class="alert alert-danger" *ngIf="description.invalid && (description.dirty || description.touched)">
+                <div *ngIf="description.errors.maxlength">La descripcion debe contener max 60 caracteres</div>
+            </div>
         </div>
         <div class="form-group">
-            <label>Telefono: </label>
-            <input type="text" class="form-control" id="phone" [(ngModel)]="departament.phone" name="phone">            
+            <label>Telefono:</label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="departament.phone" name="phone"
+                maxlength="15" placeholder="Ingrese el telefono" #phone="ngModel">
+            <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                <div *ngIf="phone.errors.maxlength">El telefono debe contener max 15 caracteres</div>
+            </div>
         </div>
         <div class="form-group">
-            <label>Estado: </label>
-            <input type="text" class="form-control" id="status" [(ngModel)]="departament.status" name="status">            
+            <label>Estado:</label>
+            <input type="text" class="form-control" id="status" [(ngModel)]="departament.status" name="status" required
+                maxlength="1" placeholder="Ingrese el estado: Activo (A) o Inactivo (I) " #status="ngModel">
+            <div class="alert alert-danger" *ngIf="status.invalid && (status.dirty || status.touched)">
+                <div *ngIf="status.errors.required">Digite el estado</div>
+                <div *ngIf="status.errors.maxlength">El estado debe contener max 1 caracter</div>
+            </div>
         </div>
+       
         <div class="form-group">
             <label>Empresa: </label>
-            <input type="text" class="form-control" id="enterprise" [(ngModel)]="departament.enterprise.name" name="enterprise">            
+            <input type="text" class="form-control" id="enterprise" [(ngModel)]="departament.enterprise.name" name="enterprise" disabled>            
         </div>
 
-        
-        <button class="btn btn-success" [disabled]= "!departamentForm.form.valid">Guardar1</button>
-        
+
+        <button class="btn btn-success" [disabled]="!departamentForm.form.valid">Guardar</button>
+
     </form>
 </div>
