@@ -114,7 +114,8 @@ public class DepartamentService implements DepartamentRepository {
 	@Override
 	public Optional<Departament> findById(Long id) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		//return Optional.empty();
+		return departamentRepository.findById(id);
 	}
 
 	@Override
