@@ -1,0 +1,26 @@
+<h2>Lista Departamentos</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Telefono</th>
+            <th>Estado</th>
+            <th>Empresa</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let departament of departaments">
+            <td>{{departament.name}}</td>
+            <td>{{departament.description}}</td>
+            <td>{{departament.phone}}</td>
+            <td>{{departament.status}}</td>
+            <td>{{departament.enterprise.name}}</td>
+            <td>
+                <button (click)="actualizarDepartament(departament.id)" class="btn btn-info">Editar</button>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>

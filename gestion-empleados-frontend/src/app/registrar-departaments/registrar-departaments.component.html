@@ -1,0 +1,29 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registrar Departamento</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Nombre:</label>
+            <input type="text" class="form-control" id = "nombre" [(ngModel)]="departament.name" name="nombre">
+        </div>
+        <div class="form-group">
+            <label>Descripcion:</label>
+            <input type="text" class="form-control" id = "nombre" [(ngModel)]="departament.description" name="nombre">
+        </div>
+        <div class="form-group">
+            <label>Telefono:</label>
+            <input type="text" class="form-control" id = "nombre" [(ngModel)]="departament.phone" name="nombre">
+        </div>
+        <div class="form-group">
+            <label>Estado:</label>
+            <input type="text" class="form-control" id = "nombre" [(ngModel)]="departament.status" name="nombre">
+        </div>
+        <div class="form-group">
+            <label>Empresa:</label>
+            <select name="enterprise" id="empresa" [(ngModel)]="departament.enterprise" class="form-control">
+                <option [ngValue]="item" *ngFor="let item of enterprises">{{item.name}}</option>
+            </select>
+        </div>
+        <button class="btn btn-success">Guardar</button>
+        
+    </form>
+</div>
