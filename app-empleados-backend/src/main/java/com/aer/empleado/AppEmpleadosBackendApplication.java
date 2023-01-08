@@ -20,6 +20,7 @@ public class AppEmpleadosBackendApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("*")
 						.allowedHeaders("*");
+				// registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:8080");
 			}
 		};
 	}
